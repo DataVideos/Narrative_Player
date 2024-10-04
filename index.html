@@ -1,0 +1,307 @@
+<!-- saved from url=(0061)http://www.yunhaiwang.net/infoVis2020/SubspacePage/index.html -->
+<html style=""><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Data Player</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Verdana, Helvetica, sans-serif
+        }
+
+        section {
+            width: 100%;
+            float: left;
+        }
+
+        h1 {
+            font-size: 26px;
+        }
+
+        h2 {
+            font-size: 20px;
+        }
+
+        h3 {
+            font-size: 16px;
+        }
+
+        p {
+            float: left;
+            display: block;
+            font-size: 16px;
+            text-align: justify;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007acd;
+        }
+
+        a:hover {
+            color: #75c8ff;
+        }
+
+        .container {
+            width: 960px;
+            margin: 0 auto;
+            text-align: left;
+            padding: 1em 2em 2em 2em;
+        }
+
+        .two-column {
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .v-column {
+            box-sizing: border-box;
+            display: flex;
+        }
+
+        .column {
+            flex: 1;
+            display: flex;
+        }
+
+
+
+        .img-container {
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .split {
+            width: 10px;
+            height: 100%;
+        }
+
+        .img-inner-container {
+            display: inline-block;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        .caption {
+            float: left;
+            width: 100%;
+            text-align: center;
+            margin: 6px 0 0 0;
+        }
+
+        .img-inner-container .item {
+            display: block;
+            float: left;
+        }
+
+        .img-inner-container .item img {
+            float: left;
+            height: 180px;
+        }
+
+        .img-inner-container .item p {
+            clear: both;
+            float: left;
+            text-align: center;
+            margin: 10px 0 0 0;
+            width: 100%;
+        }
+
+        .para-title {
+            float: left;
+            margin: 30px 0 0 0;
+        }
+
+        .column .para-title {
+            float: left;
+            margin: 0px 10px 0 0;
+        }
+
+        .style1 {
+            FONT-WEIGHT: bold;
+            FONT-SIZE: 20px;
+            FONT-FAMILY: Arial, Verdana, Helvetica, sans-serif
+        }
+    </style>
+</head>
+
+
+<body data-new-gr-c-s-check-loaded="8.906.0" data-gr-ext-installed="" style="margin-bottom: 8px !important;">
+    <!--=======draw top line========= -->
+    <div class="container">
+
+        <!--=======paper information: name authour and institution  ========= -->
+        <center>
+            <h1>Narrative Player: Reviving Data Narratives with Visuals</h1>
+
+            <h3>
+                <span>
+                    <a href="https://zekaishao25.github.io/" target="_blank">Zekai Shao</a>
+                </span><sup>1</sup>&nbsp;&nbsp;
+                <span>
+                    <a href="https://shenleixian.github.io/" target="_blank">Leixian Shen</a>
+                </span><sup>2</sup>&nbsp;&nbsp;
+                <span>
+                    <a href="https://haotian-li.com/" target="_blank">Haotian Li</a>
+                </span><sup>2</sup>&nbsp; &nbsp;
+                <span>Yi Shan </span><sup>1</sup>&nbsp; &nbsp;
+                <span>
+                    <a href="http://huamin.org/" target="_blank">Huamin Qu</a>
+                </span><sup>2</sup>&nbsp;&nbsp;
+                <span>
+                    <a href="https://www.microsoft.com/en-us/research/people/wangyun/" target="_blank">Yun Wang*</a>
+                </span><sup>3</sup>&nbsp;&nbsp;
+                <span>
+                    <a href="http://simingchen.me/" target="_blank">Siming Chen*</a>
+                </span><sup>1</sup>&nbsp;&nbsp;
+
+                <br>
+            </h3>
+            <h4>
+                <sup>1</sup>Fudan University &nbsp;
+                <sup>2</sup>The Hong Kong University of Science and Technolog &nbsp;
+                <sup>3</sup>Microsoft &nbsp;
+            </h4>
+
+            <!-- <h3>IEEE Transactions on Visualization and Computer Graphics (Proc. <a href="http://ieeevis.org/year/2023/welcome">IEEE VIS 2023</a>)</h2> -->
+                <hr> 
+        </center>
+
+        <!--=======teaser========= -->
+        <a target="_blank"><img src="./material/image/teaser.png" alt="" width="950"></a>
+        <!-- <p class="style_text" align="left"><b>Figure 1</b>: Comparison of the 5-Gaussian dataset projection of four
+            different t-SNE methods. a) t-SNE produced misaligned layouts all across four time frames. b)
+            Equal-initialization t-SNE provides better visual consistency than t-SNE but there are still unnecessary
+            movements of clusters. c) Dynamic t-SNE showed smoothing effect by distorting projections at t = 2 and 3. d)
+            Joint t-SNE generated coherent and reliable projections that reﬂected the ground-truth transformations of
+            clusters.</p> -->
+        <br>
+
+        <!--=======draw line========= -->
+
+        <!-- <hr> -->
+
+        <!--=======Abstract========= -->
+        <section>
+            <h2 class="para-title">Abstract:</h2>
+            <p>
+                Data-rich documents are commonly found across various fields such as business, finance, and science. However, a general limitation of these documents for reading is their reliance on text to convey data and facts. Visual representation of text aids in providing a satisfactory reading experience in comprehension and engagement. However, existing work emphasizes presenting the insights of local text context, rather than fully conveying data stories within the whole paragraphs and engaging readers. To provide readers with satisfactory data stories, this paper presents Narrative Player, a novel method that automatically revives data narratives with consistent and contextualized visuals. Specifically, it accepts a paragraph and corresponding data table as input and leverages LLMs to characterize the clauses and extract contextualized data facts. Subsequently, the facts are transformed into a coherent visualization sequence with a carefully designed optimization-based approach. Animations are also assigned between adjacent visualizations to enable seamless transitions. Finally, the visualization sequence, transition animations, and audio narration generated by text-to-speech technologies are rendered into a data video. The evaluation results showed that the automatic-generated data videos were well-received by participants and experts for enhancing reading.
+        </p>
+        </section>
+
+
+        <!--=======Video========= -->
+
+        <p><span class="style1">Introduction Video:</span></p>
+
+        <p align="center"><video src="./material/video/intro.mp4" controls="controls" width="950"></video></p>
+        <p>
+            <br>
+            <br>
+            <br>
+
+            <!--=======materials========= -->
+            </p><section>
+                <h2 class="para-title">Resources:</h2><br><br><br><br>
+                <a href="./material/pdf/Narrative_Player.pdf">Paper</a> ｜
+                <a href="./material/pdf/suppplementary materials.zip">Supp</a><br>
+            </section>
+
+            <!-- <h2 class="para-title">Materials:</h2>
+        <p><b>Paper:</b><a href="./shapewordle.pdf">[PDF 28.7M]</a>. </p>
+        <p><b> Supp:</b><a href="./shapewordle_supp.pdf">[PDF 157M]</a>. </p> -->
+
+            <!-- <section>
+                <h2 class="para-title">Overview:</h2><br><br><br><br>
+                <a href="tech_illustrate.png" target="_blank" style="margin:0 auto"><img src="tech_illustrate.png"
+                        alt="" width="950"></a>
+                <p class="style_text" align="left"><b>Figure 2</b>:
+                    Technical Illustration of Joint t-SNE. Note that we only consider 3-node graphlets for simplicity.
+                    a) Some changes happened between X<sub>0</sub> and X<sub>1</sub> . Several points broke the
+                    neighborhood relationship with the original cluster. Joint t-SNE measures the similarity of local
+                    structures to ﬁnd such changes and computes edge similarities (S<sub>e<sub>12</sub></sub> >
+                    S<sub>e<sub>13</sub></sub> > S<sub>e<sub>14</sub></sub> ). b) Using edge similarity as the weight of
+                    the corresponding vector constraint, Joint t-SNE generates projection Y<sub>1</sub> , which keeps
+                    the relative position of points in Y<sub>0</sub> accordingly.
+                </p>
+            </section> -->
+
+            <section>
+                <h2 class="para-title">Pipeline:</h2><br><br><br><br>
+                <a  target="_blank"><img src="./material/image/pipeline.png" alt="" width="950"></a>
+                <!-- <p class="style_text" align="left"><b>Figure 1</b>:
+                    Overview of our tree construction: (a) a set of input curves with point samples (white) and split points (orange); (b) the KD-tree in TVS space built for the input curves with the newly-added split points (yellow), the thickness of split planes’ borders (blue) indicates the level, where split planes of thicker borders are in the upper (higher) levels of the KD-tree; and (c) the curve segment in each grid cell volume is fit by a straight-line segment.
+                </p> -->
+                <br><br>
+            </section>
+
+            <!-- <section>
+                <a  target="_blank"><video src="./material/video/tax-payment.mp4" controls="controls" width="470"></a>
+                <p class="style_text" align="left"><b>Figure 1</b></p>
+                <br><br>
+            </section> -->
+
+            <section>
+                <h2 class="para-title">Example Gallery:</h2><br><br><br><br>
+                <video width="470" poster="./material/video/weather_last_frame.png" controls>
+                    <source src="./material/video/weather.mp4" type="video/mp4">
+                </video>
+
+                <video width="470" poster="./material/video/gdp_last_frame.png" controls>
+                    <source src="./material/video/gdp.mp4" type="video/mp4">
+                </video>
+
+                <video width="470" poster="./material/video/covid-19_last_frame.png" controls>
+                    <source src="./material/video/covid-19.mp4" type="video/mp4">
+                </video>
+
+                <video width="470" poster="./material/video/population_last_frame.png" controls>
+                    <source src="./material/video/population.mp4" type="video/mp4">
+                </video>
+
+                <video width="470" poster="./material/video/grades_last_frame.png" controls>
+                    <source src="./material/video/grades.mp4" type="video/mp4">
+                </video>
+
+                <video width="470" poster="./material/video/sales_last_frame.png" controls>
+                    <source src="./material/video/sales.mp4" type="video/mp4">
+                </video>
+                <!-- <a  target="_blank"><img src="./material/image/pipeline.png" alt="" width="950"></a> -->
+                <!-- <p align="center"><video src="./material/video/tax-payment.mp4" controls="controls" width="470"></video></p>
+                <p align="center"><video src="./material/video/chinese-tourists.mp4" controls="controls" width="470"></video></p>
+                <p align="center"><video src="./material/video/tourism.mp4" controls="controls" width="460"></video></p>
+                <p align="center"><video src="./material/video/Likert.mp4" controls="controls" width="470"></video></p>
+                <p align="center"><video src="./material/video/PM2.5.mp4" controls="controls" width="460"></video></p>
+                <p align="center"><video src="./material/video/stock-price.mp4" controls="controls" width="470"></video></p> -->
+                <!-- <p class="style_text" align="left"><b>Figure 1</b>:
+                    Overview of our tree construction: (a) a set of input curves with point samples (white) and split points (orange); (b) the KD-tree in TVS space built for the input curves with the newly-added split points (yellow), the thickness of split planes’ borders (blue) indicates the level, where split planes of thicker borders are in the upper (higher) levels of the KD-tree; and (c) the curve segment in each grid cell volume is fit by a straight-line segment.
+                </p> -->
+                <br><br>
+                
+
+
+            </section>
+
+            <!-- <section>
+                <h2 class="para-title">Acknowledgements:</h2>
+                <p>
+                    This work is supported by the grants of the NSFC (61772315, 61861136012), the Open Project Program
+                    of State Key Laboratory of Virtual Reality Technology and Systems, Beihang University
+                    (No.VRLAB2020C08), and the CAS grant (GJHZ1862).
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                </p>
+
+
+            </section> -->
+
+
+    </div>
+
+
+
